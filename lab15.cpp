@@ -6,7 +6,6 @@ void getInfo(int&, int&);
 double computeWays(int, int);
 double factorial(int);
 
-// Function to get and validate user input
 void getInfo(int &n, int &k) {
     do {
         cout << "How many balls (1-12) are in the pool to pick from? ";
@@ -24,20 +23,17 @@ void getInfo(int &n, int &k) {
         if (cin.fail() || k < 1 || k > n) {
             cin.clear();
             cin.ignore(10000, '\n');
-            cout << "Input Error! \n";
+            cout << "Input Error!\n";
         }
     } while (k < 1 || k > n);
 }
 
-// Function to compute number of ways to pick k items from n
 double computeWays(int n, int k) {
-    return 1.0 / (factorial(k) * factorial(n - k) / factorial(n));
+    return factorial(n) / (factorial(k) * factorial(n - k));
 }
 
-// Recursive function to compute factorial
 double factorial(int num) {
     if (num == 0 || num == 1)
         return 1;
     return num * factorial(num - 1);
 }
-
