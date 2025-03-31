@@ -28,11 +28,11 @@ void getInfo(int &n, int &k) {
     } while (k < 1 || k > n);
 }
 
-double computeWays(int n, int k) {
+double computeWays(const int n, const int k) {
     return factorial(n) / (factorial(k) * factorial(n - k));
 }
 
-double factorial(int num) {
+double factorial(const int num) {
     if (num == 0 || num == 1)
         return 1;
     return num * factorial(num - 1);
